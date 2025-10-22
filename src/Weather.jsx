@@ -8,9 +8,7 @@ import './App.css'
 
     const fetchData = async () => {
      try{
-      const response = await axios.get (
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&units=metric&appid=21abb1b5d1481c715dd8d76696b94035`
-      );
+      const response = await axios.get (`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&units=metric&appid=${import.meta.env.VITE_KEY}`);
       setWeatherData (response.data);
       console.log (response.data); 
      } catch (error){
